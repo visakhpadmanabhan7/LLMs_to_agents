@@ -1,1 +1,2 @@
 llama-index-llms-openai
+python-dotenv
