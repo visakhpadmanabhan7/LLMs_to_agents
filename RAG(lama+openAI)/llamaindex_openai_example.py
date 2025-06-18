@@ -14,11 +14,11 @@ if not api_key:
 else:
     print("✅ API key is set.")
 
-llm = OpenAI(model='gpt-4.1-nano',api_key=api_key)
+llm = OpenAI(model="gpt-4.1-mini",api_key=api_key)
 
 # To retrieve a complete response
-# response = llm.complete("William Shakespeare is ")
-# print("Full Response:\n", response)
+response = llm.complete("Which team had the worst catching efficiency in the mid of IPL 2025?")
+print("Full Response:\n", response)
 #
 
 # # To stream the response token by token
@@ -37,24 +37,24 @@ llm = OpenAI(model='gpt-4.1-nano',api_key=api_key)
 #     print(token.delta, end="", flush=True)
 
 #tool calling
-def generate_song(name: str, artist: str,lyrics:str) -> dict:
-    return {
-        "name": name,
-        "artist": artist,
-        "lyrics": lyrics,
-
-    }
-
-# Wrap tool
-tool = FunctionTool.from_defaults(fn=generate_song)
-
-# Init LLM (GPT-4o is a chat model)
-llm = OpenAI(model="gpt-4o")
-
-# Run with tool
-response = llm.predict_and_call(
-    tools=[tool],
-    user_msg="Pick a random song for me by Taylor Swift and show the song name, artist and two lines of lyrics.Use tool if required.",
-)
-
-print(response)
+# def generate_song(name: str, artist: str,lyrics:str) -> dict:
+#     return {
+#         "name": name,
+#         "artist": artist,
+#         "lyrics": lyrics,
+#
+#     }
+#
+# # Wrap tool
+# tool = FunctionTool.from_defaults(fn=generate_song)
+#
+# # Init LLM (GPT-4o is a chat model)
+# llm = OpenAI(model="gpt-4o")
+#
+# # Run with tool
+# response = llm.predict_and_call(
+#     tools=[tool],
+#     user_msg="Pick a random song for me by Taylor Swift and show the song name, artist and two lines of lyrics.Use tool if required.",
+# )
+#
+# print(response)

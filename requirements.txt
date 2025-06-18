@@ -1,2 +1,6 @@
 llama-index-llms-openai
 python-dotenv
+chromadb
+llama-index-vector-stores-chroma
+llama-index-embeddings-openai
+llama-index-embeddings-huggingface
