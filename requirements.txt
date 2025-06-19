@@ -1,2 +1,5 @@
 llama-index-llms-openai
 python-dotenv
+langchain-openai
+langchain_community
+duckduckgo-search
