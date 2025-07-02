@@ -85,7 +85,7 @@ def print_stream(stream):
 
 
 inputs = {
-    "messages": [HumanMessage(content="Add 40 + 12 and then multiply the result by 6. Also tell me a joke please.")]
+    "messages": [HumanMessage(content="Add 44 + 99 and then multiply the result by 8. Also tell me a fact about today.")]
 }
 app.get_graph().print_ascii()
 
